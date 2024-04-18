@@ -21,17 +21,22 @@ namespace HeianFilms
         private void button1_Click(object sender, EventArgs e)
         {
             Login Lg = new Login();
-            Lg.ShowDialog();
             this.Hide();
+            Lg.ShowDialog();
             this.Close();
         }
 
         private void btCadastro_Click(object sender, EventArgs e)
         {
             Cadastro Cdr = new Cadastro();
-            Cdr.ShowDialog();
             this.Hide();
+            Cdr.ShowDialog();
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

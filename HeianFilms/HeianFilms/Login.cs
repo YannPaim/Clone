@@ -51,17 +51,18 @@ namespace HeianFilms
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Cadastro Cdr = new Cadastro();
-            Cdr.ShowDialog();
             this.Hide();
+            Cdr.ShowDialog();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string hashPassword = txtPassword.Text.GetHashCode().ToString();
             if (File.Exists(@"C:\HeianFilms\Cadastros\" + txtUsername.Text + ".txt"))
             {
                 StreamReader sr = new StreamReader(@"C:\HeianFilms\Cadastros\" + txtUsername.Text + ".txt");
-                if (sr.ReadLine() == txtPassword.Text)
+                if (sr.ReadLine() == hashPassword)
                 {
                     Programa pr = new Programa();
                     this.Hide();

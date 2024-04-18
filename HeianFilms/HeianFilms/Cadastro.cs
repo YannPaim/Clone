@@ -62,7 +62,8 @@ namespace HeianFilms
 
         public void btCriar_Click(object sender, EventArgs e)
         {
-                string path = (@"C:\HeianFilms\Cadastros\" + txtUser.Text + ".txt");
+            string hashsenha = txtSenha.Text.GetHashCode().ToString();
+            string path = (@"C:\HeianFilms\Cadastros\" + txtUser.Text + ".txt");
                 if (txtSenha.Text == txtConfirmar.Text)
                 {
                     try
@@ -77,7 +78,8 @@ namespace HeianFilms
                             using (var sw = File.CreateText(path))
                             {
                                 sw.WriteLine(txtSenha.Text);
-                            }
+                                string hashedPassword = txtSenha.Text.GetHashCode().ToString();
+                        }
 
                         }
 
@@ -89,11 +91,11 @@ namespace HeianFilms
 
                     try
                     {
-                        StreamWriter sw = new StreamWriter(path);
-
-                        sw.WriteLine(txtSenha.Text);
-                        MessageBox.Show("testetop");
-                        sw.Close();
+                        using (StreamWriter sw = new StreamWriter(path))
+                        {
+                        sw.WriteLine(hashsenha);
+                        MessageBox.Show("ok");
+                        }
 
                          Login lg = new Login();
                          this.Hide();

@@ -81,6 +81,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Programa.resx">
+      <DependentUpon>Programa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +109,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoHeian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\posterVenow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jurassic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vingadores.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
